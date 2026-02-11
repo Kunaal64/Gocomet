@@ -3,7 +3,8 @@
  */
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-const WS_URL = `ws://${window.location.host}/ws`;
+const isDev = import.meta.env.DEV;
+const WS_URL = isDev ? 'ws://127.0.0.1:8000/ws' : `ws://${window.location.host}/ws`;
 
 export function useWebSocket(onMessage) {
     const [isConnected, setIsConnected] = useState(false);
