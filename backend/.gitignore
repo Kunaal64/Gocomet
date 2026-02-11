@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+# package-lock.json should be committed for consistent installs 
+# Standard practice is to KEEP it, but some users ignore. I'll stick to standard: KEEP.
+# So removing package-lock.json from ignore.
+
+# Environment
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# Coverage
+coverage/
+.nyc_output/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/

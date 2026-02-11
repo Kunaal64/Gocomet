@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Custom base styles ───────────────────────────── */
+@layer base {
+    body {
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    /* Remove number input arrows */
+    input[type='number']::-webkit-outer-spin-button,
+    input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        appearance: none;
+        margin: 0;
+    }
+
+    input[type='number'] {
+        -moz-appearance: textfield;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 4px;
+    }
+}
+
+/* ─── Reusable component classes ───────────────────── */
+/* ─── Reusable component classes ───────────────────── */
+@layer components {
+    /* Minimal scrollbar for activity feed */
+    .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+        background: #111;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #333;
+        border-radius: 2px;
+    }
+}

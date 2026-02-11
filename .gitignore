@@ -1,0 +1,14 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+
+# IDE
+.vscode
+.idea
+
+# Top level node dependencies (if any)
+node_modules/
+
+# Environment
+.env
