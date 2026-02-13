@@ -2,7 +2,8 @@
  * API service for leaderboard endpoints
  */
 
-const BACKEND_URL = import.meta.env.VITE_API_URL || '';
+const isDev = import.meta.env.DEV;
+const BACKEND_URL = import.meta.env.VITE_API_URL || (isDev ? 'http://127.0.0.1:8000' : '');
 const API_BASE = `${BACKEND_URL}/api/leaderboard`;
 
 export async function fetchTopPlayers() {
