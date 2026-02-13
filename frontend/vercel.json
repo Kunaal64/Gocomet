@@ -1,1 +1,8 @@
-{\n  \"rewrites\": [\n    { \"source\": \"/(.*)\", \"destination\": \"/index.html\" }\n  ]\n}\n
+{
+    "rewrites": [
+        {
+            "source": "/((?!api/.*).*)",
+            "destination": "/index.html"
+        }
+    ]
+}
