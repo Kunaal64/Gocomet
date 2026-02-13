@@ -2,7 +2,8 @@
  * API service for leaderboard endpoints
  */
 
-const API_BASE = '/api/leaderboard';
+const BACKEND_URL = import.meta.env.VITE_API_URL || '';
+const API_BASE = `${BACKEND_URL}/api/leaderboard`;
 
 export async function fetchTopPlayers() {
     const start = performance.now();

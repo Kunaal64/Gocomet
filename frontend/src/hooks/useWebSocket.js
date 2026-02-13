@@ -4,7 +4,17 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 const isDev = import.meta.env.DEV;
-const WS_URL = isDev ? 'ws://127.0.0.1:8000/ws' : `ws://${window.location.host}/ws`;
+const BACKEND_URL = import.meta.env.VITE_API_URL || '';
+
+function getWsUrl() {
+    if (isDev) return 'ws://127.0.0.1:8000/ws';
+    if (BACKEND_URL) {
+        // Convert https://x.onrender.com → wss://x.onrender.com/ws
+        return BACKEND_URL.replace(/^http/, 'ws') + '/ws';
+    }
+    return `ws://${window.location.host}/ws`;
+}
+const WS_URL = getWsUrl();
 
 export function useWebSocket(onMessage) {
     const [isConnected, setIsConnected] = useState(false);
